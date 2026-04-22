@@ -26,6 +26,7 @@ class CPU:
             addr += 4
         self.memory.loading_mode = False
         self.regs.set("PC", decimal_a_binario(RAM.INSTR_START, 32))
+        self.regs.set("sp", decimal_a_binario(RAM.DATA_START, 32))
 
     def map_reg(self, idx):  # create method to map indices to register names
         reg_map = {
