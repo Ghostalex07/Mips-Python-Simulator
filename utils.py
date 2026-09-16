@@ -7,6 +7,10 @@ def decimal_to_unsigned_bin(value: int, bits: int) -> str:
 
 
 def decimal_to_signed_bin(value: int, bits: int) -> str:
+    lower = -(1 << (bits - 1))
+    upper = (1 << (bits - 1)) - 1
+    if value < lower or value > upper:
+        raise ValueError(f"Value {value} does not fit in {bits} bits")
     if value >= 0:
         return decimal_to_unsigned_bin(value, bits)
     mask = (1 << bits) - 1
