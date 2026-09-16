@@ -1,6 +1,6 @@
 # Mips-Simulator
 
-[![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![CI](https://github.com/Ghostalex07/Mips-Python-Simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/Ghostalex07/Mips-Python-Simulator/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Ghostalex07/Mips-Python-Simulator/blob/main/LICENSE)
 
