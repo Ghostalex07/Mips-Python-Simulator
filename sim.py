@@ -1,26 +1,30 @@
+import sys
 from CPU import CPU
 
+
 def load_instructions(path):
-    instrs = []
-    with open(path, 'r') as f:
-        for lineno, raw in enumerate(f, start=1):
-            s = raw.strip()
-            if not s:
+    instructions = []
+    with open(path) as f:
+        for lineno, line in enumerate(f, 1):
+            line = line.strip()
+            if not line:
                 continue
-            if len(s) != 32 or any(c not in "01" for c in s):
-                raise ValueError(f"Line {lineno}: invalid instruction ({len(s)} bits): {s!r}")
-            instrs.append(s)
-    return instrs
+            if len(line) != 32 or any(c not in "01" for c in line):
+                raise ValueError(f"Line {lineno}: not a valid 32-bit instruction: {line!r}")
+            instructions.append(line)
+    return instructions
+
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        filepath = sys.argv[1]
+    else:
+        filepath = "sample_program.txt"
+
     cpu = CPU()
-    instructions = load_instructions('sample_program.txt')
+    instructions = load_instructions(filepath)
     cpu.load_program(instructions)
+    cpu.run()
 
-    # Execute EXACTLY N instructions (where N = number of lines)
-    for _ in range(len(instructions)):
-        cpu.run_instruction()
-
-    # Now dump to file
     cpu.dump("registers_dump.txt", "memory_dump.txt")
-
+    print("Done. Output written to registers_dump.txt and memory_dump.txt")

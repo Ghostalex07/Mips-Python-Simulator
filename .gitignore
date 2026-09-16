@@ -6,4 +6,5 @@ __pycache__/
 *.egg
 dist/
 build/
-*.dump.txt
+*_dump.txt
+opencode.txt
