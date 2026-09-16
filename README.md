@@ -1,6 +1,8 @@
 # Mips-Simulator
 
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/)
+[![CI](https://github.com/Ghostalex07/Mips-Python-Simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/Ghostalex07/Mips-Python-Simulator/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Ghostalex07/Mips-Python-Simulator/blob/main/LICENSE)
 
 A small MIPS processor simulator written in Python. It reads raw 32-bit machine code, executes it, and dumps the final state of registers and memory to text files. Built as a personal project to understand how a CPU actually runs instructions.
 
